@@ -1,0 +1,65 @@
+
+
+<body>
+    <div class="container">
+        <form>
+
+            <div class="form-group col-md-4">
+                <label for="matricule">Matricule</label>
+                <input type="text" name="matricule" class="form-control" id="matricule" [(ngModel)]="newVoiture.matricule">
+            </div>
+            
+            <div class="form-group col-md-4">
+                <label for="marque">Marque</label>
+                <input  name ="marque" type="text" class="form-control" id="marque"[(ngModel)]="newVoiture.marque">
+                {{input}}
+            </div>
+         
+
+            <div class="form-group col-md-4">
+                <label for="couleur">Couleur</label>
+                <select id="couleur" name="couleur" class="form-control" [(ngModel)]="newVoiture.couleur">
+                    <option selected>noir</option>
+                    <option selected>blanc</option>
+                    <option selected>rouge</option>
+                    <option selected>bleu</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="carburant">Carburant</label>
+                <select id="carburant" name="carburant" class="form-control"[(ngModel)]="newVoiture.carburant">
+                    <option selected>Diesel</option>
+                    <option selected>SP 98</option>
+                    <option selected>SP 95</option>
+                    <option selected>GPL</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="puissance fiscale">Puissance fiscale</label>
+                <input type="text" name="puissance fiscale" class="form-control" id="puissance fiscale" [(ngModel)]="newVoiture.puissance_fiscale">
+            </div>
+
+            <div class="form-group col-md-4">
+                <label for="véhicule hybride">Vehicule hybride</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="oui" name="hybride" value="Oui" [(ngModel)]="newVoiture.vehicule_hybride">
+                    <label class="form-check-label" for="oui">Oui </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="non" name="hybride" value="Non" [(ngModel)]="newVoiture.vehicule_hybride" >
+                    <label class="form-check-label" for="non">Non </label>
+                </div>
+
+            </div>
+
+            <button [swal]="['Voiture ajoutée!', 'Une voiture est ajoutée. ', 'success']" type="submit" (click)= "addVoiture()" class="btn btn-primary" name="button">Valider</button>
+            
+
+        </form>
+    </div>
+
+
+
+</body>

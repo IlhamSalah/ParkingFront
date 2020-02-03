@@ -1,0 +1,25 @@
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group col-md-4">
+                <label for="nom">Nom Parking</label>
+                <input type="text" name =" nom" class="form-control" id="nom" [(ngModel)]="newParking.nomparking">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="nbplace">Nombre de place</label>
+                <input type="text" name="nbplace" class="form-control" id="nbplace" [(ngModel)]="newParking.nbPlace">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="tarif">Tarif</label>
+                <input type="text" name="tarif" class="form-control" id="tarif" [(ngModel)]="newParking.tarif">
+            </div>
+            
+
+            <button type="submit" (click)= "addParking()" class="btn btn-primary">Valider</button>
+
+        </form>
+    </div>
+
+
+
+</body>

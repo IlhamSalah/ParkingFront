@@ -1,0 +1,53 @@
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group col-md-4">
+                <label for="nom">Nom</label>
+                <input type="text" name =" nom" class="form-control" id="nom" [ngModel]="personne.nom"> 
+ 
+            </div>
+            <div class="form-group col-md-4">
+                <label for="prenom">Prenom</label>
+                <input type="text" name="prenom" class="form-control" id="prenom" [(ngModel)]="personne.prenom">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="age">Age</label>
+                <input type="text" name="age" class="form-control" id="age" [(ngModel)]="personne.age">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="adresse">Adresse</label>
+                <input type="text" name="adresse" class="form-control" id="adresse" [(ngModel)]="personne.adresse">
+            </div>
+
+            <div class="form-group col-md-12">
+                <label for="telephone">Telephone</label>
+                <div class="form-row">
+
+                    <div class="col-md-2">
+
+
+                        <select id="indicatif" name="indicatif" class="form-control" [(ngModel)]="personne.indicatif">
+                            <option  value="33">+33</option>
+                            <option  value="34">+34</option>
+
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="telephone" id="telephone" [(ngModel)]="personne.telephone">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label for="nom">Mail</label>
+                <input type="email" class="form-control" name="mail" id="mail" placeholder="name@example.com" [(ngModel)]="personne.mail">
+            </div>
+
+            <button type="submit" (click)= "updatePersonne()" class="btn btn-primary">Modifier</button>
+
+        </form>
+    </div>
+
+
+
+</body>

@@ -1,0 +1,36 @@
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group row">
+                <div class= "col-md-4">
+      
+                <label for="nom">Personne</label>
+            </div>
+            <div class="col-md-8">
+                <select name ="personne" class="form-control" id="personne" [(ngModel)]="personne.idpersonne"> <!--ng model là ou sera sauvegarder la Ngvalue --> 
+                    <option *ngFor="let unePersonne of listPersonne" [(ngValue)] = "unePersonne.idpersonne">{{unePersonne.nom}}</option>
+                    <!--le personne de personne.idpersonne est local il vient du ngFor ce qui est différent du personne ds le ngModel qui vient du component-->
+                </select>
+            </div>
+            </div>
+
+            <div class="form-group row">
+                <div class= "col-md-4">
+                <label for="matricule">Voiture</label>
+            </div>
+            <div class="col-md-8">
+                <select  name="voiture" class="form-control" id="voiture" [(ngModel)]="voiture.idvoiture">
+                    <option *ngFor="let voiture of listVoiture" [(ngValue)] = "voiture.idvoiture">{{voiture.matricule}}</option>
+                  
+                </select>
+            </div>
+        </div>
+<div align="center">
+            <button type="submit" (click)= "affecterVoiturePersonne()" class="btn btn-primary">Affecter</button>
+        </div>
+        </form>
+    </div>
+
+
+
+</body>

@@ -1,0 +1,40 @@
+
+<table class="table">
+    <thead class="thead-dark">
+        <th>idVoiture</th>
+        <th>Matricule</th>
+        <th>Marque</th>
+        <th>Propriétaire</th>
+        <th>Couleur</th>
+        <th>Carburant</th>
+        <th>Puissance fiscale</th>
+        <th>Vehicule hybride</th>
+        <th>Sationnée dans le parking : </th>
+        <th>Afficher une voiture</th>
+        <th>Modifier une voiture</th>
+        <th>Action</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let voiture of listVoitures">
+            <td>{{voiture.idvoiture}}</td>
+            <td>{{voiture.matricule}}</td>
+            <td>{{voiture.marque}}</td>
+            <td>{{voiture.proprietaire}}</td>
+            <td>{{voiture.couleur}}</td>
+            <td>{{voiture.carburant}}</td>
+            <td>{{voiture.puissance_fiscale}}</td>
+            <td>{{voiture.vehicule_hybride}}</td>
+            <td>{{voiture.stationnement}}</td>
+         
+
+            <td><a type="button" href="{{'http://localhost:4200/detail_voiture/'+voiture.idvoiture}}" class="btn btn-outline-primary">Afficher</a></td>
+            <td><a type="button" href="{{'http://localhost:4200/modifier_voiture/'+voiture.idvoiture}}" class="btn btn-outline-warning">Modifier</a></td>
+            <td><button type="button"   class="btn btn-outline-danger" (click)="deleteSwal.fire()">Supprimer</button></td>
+                <swal #deleteSwal title="Suppression Voiture" text="Etes-vous sur de vouloir la supprimer?"
+                icon="question" [showCancelButton]="true" [focusCancel]="true"
+                (confirm)="delete(voiture.idvoiture)">
+        </swal >
+        </tr>
+    </tbody>
+</table>

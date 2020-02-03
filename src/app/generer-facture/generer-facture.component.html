@@ -1,0 +1,62 @@
+
+<table class="table">
+  <thead class="thead-danger">
+    <th>Parking</th>
+      <th>Nombre de voiture</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Tarif</th>
+      <th>Montant</th>
+  </thead>
+
+  <tbody>
+    <td>{{idparking}}</td>
+          <td>{{NombreVoiture.nb_personne_parking_voiture}}</td>
+          <td>{{NombreVoiture.nom}}</td>
+          <td>{{NombreVoiture.prenom}}</td>
+          <td>{{NombreVoiture.tarif}}</td>
+          <td>{{NombreVoiture.tarif*NombreVoiture.nb_personne_parking_voiture}}</td>
+
+  
+  
+         
+  </tbody>
+</table>
+
+<table>
+  <td>
+<button type="button" class="btn btn-danger" (click)="addFacture()">
+  Editer facture
+</button>
+</td>
+
+
+
+
+
+<td>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Payer
+  </button>
+</td>
+</table>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">FACTURE</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         FELICITATION VOUS AVEZ PAYER !! 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

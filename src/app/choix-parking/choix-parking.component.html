@@ -1,0 +1,54 @@
+
+    <div class="container">
+        <form>
+            <div class="form-group row">
+                <div class= "col-md-4">
+      
+                <label for="nom">Parking</label>
+            </div>
+            </div>
+            <div class="col-md-8">
+                <select name ="parking" class="form-control" id="parking" [(ngModel)]="parking.idparking" (ngModelChange)="ListParkingPersonne()"> <!--ng model là ou sera sauvegarder la Ngvalue --> 
+                    <option *ngFor="let unParking of listParking" [(ngValue)] = "unParking.idparking">{{unParking.nomParking}}</option>
+                    <!--le personne de personne.idpersonne est local il vient du ngFor ce qui est différent du personne ds le ngModel qui vient du component-->
+                </select>
+            </div>
+            
+            
+
+<!--            
+<div align="center">
+            <button type="submit" (click)= "ListParkingPersonne()" name = "choixParking" class="btn btn-primary">Valider</button>
+        </div>
+        </form>
+    </div> -->
+
+
+
+    <table class="table">
+        <thead class="thead-dark">
+            
+            <th>Nom</th>
+            <th>Prenom</th> 
+            <th>Facture</th>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let personneVoiture of listPersonne">
+           
+                <td>{{personneVoiture.nom}}</td>
+                <td>{{personneVoiture.prenom}}</td>
+                <td><a type="button" (click)= "addFacture()" href="{{'http://localhost:4200/genererfacture/'+parking.idparking+'/'+personneVoiture.idpersonne}}" class="btn btn-outline-info">Générer la facture</a></td>
+             
+             </tr>
+        </tbody>
+    </table>
+    
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+
+<table class="table">
+    <thead class="thead-dark">
+        <th>idPersonne</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Age</th>
+        <th>Adresse</th>
+        <th>Indicatif</th>
+        <th>Telephone</th>
+        <th>Mail</th>
+        <th>Afficher une personne</th>
+        <th>Afficher toutes ses voitures</th>
+        <th>Modifier une personne</th>
+        <th>Action</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let personne of listPersonnes">
+            <td>{{personne.idpersonne}}</td>
+            <td>{{personne.nom}}</td>
+            <td>{{personne.prenom}}</td>
+            <td>{{personne.age}}</td>
+            <td>{{personne.adresse}}</td>
+            <td>{{personne.indicatif}}</td>
+            <td>{{personne.telephone}}</td>
+            <td>{{personne.mail}}</td>
+            <td><a type="button" href="{{'http://localhost:4200/detail_personne/'+personne.idpersonne}}" class="btn btn-outline-primary">Afficher</a></td>
+            <td><a type="button" href="{{'http://localhost:4200/afficher_voiture_personne/'+personne.idpersonne}}" class="btn btn-outline-success">Voir toutes les voitures</a></td>
+            <td><a type="button" href="{{'http://localhost:4200/modifier_personne/'+personne.idpersonne}}" class="btn btn-outline-warning">Modifier</a></td>
+            <td><button type="button" (click)= "deleteSwal.fire()" class="btn btn-outline-danger">Supprimer</button></td>
+            <swal #deleteSwal title="Suppression Personne" text="Etes-vous sur de vouloir la supprimer?"
+                icon="question" [showCancelButton]="true" [focusCancel]="true"
+                (confirm)="delete(personne.idpersonne)">
+        </swal >
+        </tr>
+    </tbody>
+</table>
